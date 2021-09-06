@@ -54,7 +54,16 @@ class TestCredentials(unittest.TestCase):
 
     def tearDown(self):
         '''
-        method that does clean up after each test case has run.
+        method that cleans up after each test case has run.
         '''
-        Credentials.credentials_list = []             
+        Credentials.credentials_list = []   
 
+    def test_display_all_saved_credentials(self):
+        '''
+        method that displays all the credentials that has been saved by the user
+        '''
+
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+if __name__ == "__main__":
+    unittest.main()              
