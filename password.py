@@ -1,6 +1,7 @@
 from _typeshed import Self
 import random
 import string
+import pyperclip
 class User: 
     """
     Creates a user class to generate a new instances.
@@ -55,3 +56,20 @@ class Credentials():
         Method to store new credential to the credentials list.
         """  
         Credentials.credentials_list.append(self)
+
+    @classmethod
+    
+    def find_credential(cls,account):
+        """
+        Method that takes in an account_name and returns a credential that matches that account_name.
+        """
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return credential
+
+    @classmethod 
+    def copy_password(cls,account):
+        found_credentials = Credentials.find_credential(account)
+        pyperclip.copy(found_credentials.password)            
+
+        
