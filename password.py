@@ -42,4 +42,16 @@ class Credentials():
         Veryfies whether the user is in user_list or not.
         """
         a_user = ""
-        
+    def __init__(self,account,userName,password):
+        """
+        Method that defines user credentials to be stored.
+        """
+        self.account = account
+        self.username = userName
+        self.password = password
+
+    def save_details(self):
+        """
+        Method to store new credential to the credentials list.
+        """  
+        Credentials.credentials_list.append(self)
