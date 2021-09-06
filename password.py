@@ -1,3 +1,4 @@
+from _typeshed import Self
 import random
 import string
 class User: 
@@ -30,4 +31,15 @@ class User:
         """
         User.user_list.remove(self)
     
-    
+class Credentials():
+    """
+    This class helps in creation of new objects of Credentials. 
+    """    
+    credentials_list = []
+    @classmethod
+    def verify_user(cls,username,password):
+        """
+        Veryfies whether the user is in user_list or not.
+        """
+        a_user = ""
+        
